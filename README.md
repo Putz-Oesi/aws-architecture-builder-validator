@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# AWS Architecture Builder & Validator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive portfolio project built with React, TypeScript, Vite, and React Flow.
 
-Currently, two official plugins are available:
+This app allows users to visually build AWS architectures, validate common service relationships, and practice typical cloud patterns through guided exercises.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+The goal of this project is to combine frontend engineering, UX thinking, and cloud architecture fundamentals in one interactive tool.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Instead of only drawing boxes and lines, the app helps users:
 
-## Expanding the ESLint configuration
+- build common AWS architecture patterns visually
+- understand whether service relationships make sense
+- receive guidance for better paths
+- practice architecture basics through structured exercises
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Visual architecture builder
+- Drag and drop AWS services onto the canvas
+- Connect services visually
+- Remove services and connections directly in the UI
+- Use a dedicated service palette above the canvas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Architecture validation
+- Service relationships are checked with a rule-based validation layer
+- Connections are classified semantically, for example:
+  - request flow
+  - data flow
+  - event flow
+  - review-needed flow
+- Problematic connections provide feedback and better-path suggestions
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Guided architecture feedback
+- Live architecture guide panel
+- Current pattern detection
+- Next best step suggestions
+- Selected service explanation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Practice mode
+- Random guided exercises grouped by category
+- Categories currently include:
+  - Build patterns
+  - Complete patterns
+  - Fix broken architectures
+- Exercise pool logic prevents immediate repetition
+- Completion feedback is shown directly inside the canvas
+- Completed and remaining exercise counts are tracked per category
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Example architecture patterns included
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Static website delivery
+- Serverless API
+- Web app with database
+- Event-driven processing flow
+- Fixing broken architecture relationships
+
+## Tech stack
+
+- React
+- TypeScript
+- Vite
+- React Flow
+- CSS
+
+## Why I built this
+
+I wanted to create a portfolio project that is more than a standard CRUD application.
+
+This project lets me demonstrate:
+
+- frontend architecture and state handling
+- UI and UX decisions
+- interactive drag-and-drop behavior
+- rule-based validation logic
+- practical AWS architecture understanding
+
+It is intended as a practical learning and portfolio project for cloud and frontend-oriented roles.
+
+## Current status
+
+This project is already functional and usable.
+
+Current capabilities include:
+- architecture building
+- validation feedback
+- guided exercises
+- category-based random exercise pools
+- success detection for required architecture structures
+
+The project is still being improved incrementally, especially around:
+- exercise progression
+- architecture feedback depth
+- validation and learning hints
+- additional UX refinements
+
+## Local setup
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Putz-Oesi/aws-architecture-builder-validator.git
+cd aws-architecture-builder-validator
+npm install
+npm run dev
