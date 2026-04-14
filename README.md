@@ -104,6 +104,7 @@ git clone https://github.com/Putz-Oesi/aws-architecture-builder-validator.git
 cd aws-architecture-builder-validator
 npm install
 npm run dev
+```
 
 ## Screenshots
 
