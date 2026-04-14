@@ -104,3 +104,14 @@ git clone https://github.com/Putz-Oesi/aws-architecture-builder-validator.git
 cd aws-architecture-builder-validator
 npm install
 npm run dev
+
+## Screenshots
+
+### Main builder view
+![Main builder view](./screenshots/main-builder.jpg)
+
+### Practice mode
+![Practice mode](./screenshots/practice-mode.jpg)
+
+### Builder with AWS services on canvas
+![Builder with AWS services on canvas](./screenshots/builder-with-nodes.jpg)
